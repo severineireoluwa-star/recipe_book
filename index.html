@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecipeBook</title>
+
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">🍽️</span>
+      <span class="logo-text">Ireoluwa Emmanuel Severine </span>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link" id="favLink">Favorites</a>
+      <a href="#" class="nav-link" id="shoppingLink">Shopping List</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Your Personal Kitchen Companion</div>
+    <h1 class="hero-title">Discover &amp; Save <span>Delicious Recipes</span></h1>
+    <p class="hero-subtitle">Cook smarter. Eat better. Plan your meals with ease — and never forget a great recipe.</p>
+  </section>
+
+  <main class="main">
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search recipes or cuisine…" class="search-input">
+      <select id="categoryFilter" class="category-select">
+        <option value="all">All Categories</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snack">Snack</option>
+        <option value="dessert">Dessert</option>
+      </select>
+      <button class="btn-add" id="openFormBtn">+ Add Recipe</button>
+    </div>
+
+    <div class="section-label">
+      <h2>Recipes</h2>
+      <span class="count-badge" id="countBadge">0</span>
+    </div>
+
+    <div class="recipe-grid" id="recipeGrid"></div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add New Recipe</h2>
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="form-group">
+        <label>Recipe Name</label>
+        <input type="text" id="recipeName" placeholder="e.g. Jollof Rice">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Category</label>
+          <select id="recipeCategory">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner" selected>Dinner</option>
+            <option value="snack">Snack</option>
+            <option value="dessert">Dessert</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cuisine</label>
+          <input type="text" id="recipeCuisine" placeholder="e.g. Nigerian, Italian">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Ingredients <small style="font-weight:400;color:var(--color-muted)">(one per line)</small></label>
+        <textarea id="recipeIngredients" rows="5" placeholder="Rice&#10;Tomatoes&#10;Onions"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Instructions</label>
+        <textarea id="recipeInstructions" rows="3" placeholder="Step by step…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Emoji <small style="font-weight:400;color:var(--color-muted)">(optional)</small></label>
+        <input type="text" id="recipeEmoji" placeholder="🍚">
+      </div>
+
+      <button class="btn-submit" id="saveRecipeBtn">Save Recipe</button>
+    </div>
+  </div>
+
+  <!-- SHOPPING PANEL -->
+  <div class="shopping-panel" id="shoppingPanel">
+    <h2>🛒 Shopping List</h2>
+    <p class="shopping-recipe-name" id="shoppingRecipeName"></p>
+    <div id="shoppingItems"></div>
+    <p class="shopping-count" id="shoppingCount"></p>
+    <div class="shopping-spacer"></div>
+    <button class="btn-close-panel" id="closeShoppingPanel">Close</button>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Built with care. All rights reserved. Severine Ireoluwa <span>RecipeBook</span></p>
+    
+  </footer>
+  <script src="app.js"></script>
+
+  
+</body>
+</html>
